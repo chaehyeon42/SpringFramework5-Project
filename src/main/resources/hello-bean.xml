@@ -8,12 +8,16 @@
 
 
 	<!-- StringPrinter 클래스를 Spring bean으로 설정 -->
-	<bean id="StringPrinter" class="myspring.di.xml.StringPrinter"/>
+	<bean id="strPrinter" class="myspring.di.xml.StringPrinter"/>
 	
 	<!-- ConsolePrinter 클래스를 Spring Bean으로 설정 -->
 	<bean id="conPrinter" class="myspring.di.xml.ConsolePrinter" />
 	
 	<!-- Hello 클래스를  Spring Bean으로 설정 Setter Injection 방식 -->
 	<bean id="hello" class="myspring.di.xml.Hello">
+		<!-- setName() 메서드 호출 -->
+		<property name="name" value="스프링"/>
+		<!-- setprinter() 메서드 호출 -->
+		<property name="printer" ref="strPrinter"/>
 	</bean>
 </beans>

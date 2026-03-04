@@ -29,8 +29,17 @@
 	    <artifactId>spring-context</artifactId>
 	    <version>${spring.version}</version>
 	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+	<dependency>
+		<groupId>org.junit.jupiter</groupId>
+		<artifactId>junit-jupiter-api</artifactId>
+		<version>5.9.3</version>
+		<scope>test</scope>
+	</dependency>
   </dependencies>
-
+	
+	
   <build>
     <finalName>MySpringFW</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
