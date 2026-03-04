@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Product 클래스를 setter injection Spring bean으로 설정 -->
+	<!-- set메서드로 값 넣기 -->
+	<bean id="product1" class="mylaborder.di.xml.Product">
+		<property name="id" value="P001"/>
+		<property name="name" value="노트북"/>
+		<property name="price" value="150000"/>
+	</bean>
+	
+	<!-- constructor-arg 태그로 자바 클래스의 생성자를 통해 객체 생성과 동시에 값 주입-->
+	<bean id="product2" class="mylaborder.di.xml.Product">
+		<constructor-arg value="P002"/>
+		<constructor-arg value="스마트폰"/>
+		<constructor-arg value="800000"/>	
+	</bean>	
+	
+	<!-- setProducts() 메서드 호출 -->
+	<bean id="shoppingCart" class="mylaborder.di.xml.ShoppingCart">
+		<property name="products">
+			<list>
+				<ref bean="product1"/>
+				<ref bean="product2"/>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- orderService 클래스를  Spring Bean으로 설정 Setter Injection 방식 -->
+	<bean id="orderService" class="mylaborder.di.xml.OrderService">
+	<!-- setShoppingCart() 메서드 호출 -->
+		<property name="shoppingCart" ref="shoppingCart"/>
+	</bean>
+	
+</beans>
