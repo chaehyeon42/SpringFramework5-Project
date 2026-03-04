@@ -3,14 +3,19 @@ package myspring.di.xml;
 import java.util.List;
 
 public class Hello {
+	//변수
 	String name;
 	Printer printer;
 	List<String> names;
-
+	
+	//기본 생성자
 	public Hello() {
+		System.out.println(this.getClass().getName() + " 기본생성자 호출됨!");
 	}
+	
 
 	public Hello(String name, Printer printer) {
+		System.out.println(this.getClass().getName() + " 오버로딩 생성자 호출됨!");
 		this.name = name;
 		this.printer = printer;
 	}
@@ -24,17 +29,20 @@ public class Hello {
 	}
 
 	public void setName(String name) {
+		System.out.println("setName() 메서드 호출됨 " + name);
 		this.name = name;
 	}
 
 	public void setPrinter(Printer printer) {
+		System.out.println("setPrinter() 메서드 호출됨 " + printer.getClass().getName());
 		this.printer = printer;
 	}
 
 	public String sayHello() {
 		return "Hello " + name;
 	}
-
+	
+	//print 메서드 호출 하고 sayHello받아서 반환
 	public void print() {
 		this.printer.print(sayHello());
 	}
