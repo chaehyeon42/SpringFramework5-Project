@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import mylaborder.di.xml.config.HelloConfig;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import javax.annotation.Resource;

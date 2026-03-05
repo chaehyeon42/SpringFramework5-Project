@@ -1,4 +1,4 @@
-package mylaborder.di.xml.config;
+package myspring.di.xml.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

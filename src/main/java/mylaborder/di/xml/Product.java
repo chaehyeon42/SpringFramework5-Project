@@ -4,7 +4,7 @@ public class Product {
 	//변수 선언
 	private String id;
 	private String name;
-	private int price;
+	private long price;
 	
 	//기본 생성자(Setter 주입)
 	public Product() {
@@ -44,7 +44,7 @@ public class Product {
     	return name; 
     	}
     
-    public int getPrice() { 
+    public long getPrice() { 
     	return price; 
     	}
 }

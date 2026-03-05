@@ -34,7 +34,7 @@
 	<!-- orderService 클래스를  Spring Bean으로 설정 Setter Injection 방식 -->
 	<bean id="orderService" class="mylaborder.di.xml.OrderService">
 	<!-- setShoppingCart() 메서드 호출 -->
-		<property name="shoppingCart" ref="shoppingCart"/>
+		<property name="shopCart" ref="shoppingCart"/>
 	</bean>
 	
 </beans>
