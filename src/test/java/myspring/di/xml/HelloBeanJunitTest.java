@@ -1,5 +1,6 @@
 package myspring.di.xml;
 
+//static import
 import static org.junit.jupiter.api.Assertions.* ; //Assertions라는 클래스에 포함한 모든 메서드를 import
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,5 +29,9 @@ public class HelloBeanJunitTest {
 		
 		//방법2. 주소를 비교해주는 Static 메서드
 		assertSame(helloById, helloByType);
+		
+		//sayHello 메서드 호출 후 값 검증 
+		//assertEquals : 값 비교후 검증해주는 메서드
+		assertEquals("Hello 스프링", helloByType.sayHello());
 	}
 }
