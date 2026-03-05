@@ -13,7 +13,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class HelloBean {
 	//hello_bean.xml 의 Name이라는 변수에 어노테이션이라는 값이 지정됨
-	@Value("어노테이션") 
+	//properties 파일을 이용해 name 값 입력 -->"${myName}"
+	//properties 파일은 한글 입력시 자동 형변환됨
+	@Value("${myName}") 
 	//변수
 	String name;
 	

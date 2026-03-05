@@ -27,7 +27,7 @@ public class HelloBeanCons {
 	
 	//생성자 위에 어노테이션 작성
 	@Autowired
-	public HelloBeanCons(@Value("생성자어노테이션") String name
+	public HelloBeanCons(@Value("${myNameC}") String name
 						,@Qualifier("ConsolePrinter") IPrinter printer) {
 		System.out.println(this.getClass().getName() + " 오버로딩 생성자 호출됨!");
 		this.name = name;

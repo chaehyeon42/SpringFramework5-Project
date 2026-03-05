@@ -10,6 +10,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import javax.annotation.Resource;
+
 @ExtendWith(SpringExtension.class)
 //@ContextConfiguration : 스프링빈 (Bean) 설정파일의위치를 지정할때사용되는 어노테이션
 @ContextConfiguration(locations = "classpath:hello-annot.xml")
@@ -19,8 +21,23 @@ public class HelloBeanSpringTest {
 	@Autowired
 	HelloBean hello;	
 	
+	@Resource(name = "StringPrinter")
+	//toString 호출
+	IPrinter printer;
+	
+	@Autowired
+	HelloBeanCons helloCons;
+	
 	@Test
 	void helloBeanSetter() {
 		assertEquals("Hello 어노테이션", hello.sayHello());
+		hello.print(); // print 메서드 호출
+		assertEquals("Hello 어노테이션", printer.toString());
+	}
+	
+	@Test
+	void helloBeanCons() {
+		assertEquals("Hello 생성자어노테이션", helloCons.sayHello());
+		helloCons.print();
 	}
 }

@@ -9,4 +9,7 @@
 	<!-- base-package 는 어떤 패키지를 뿌려주는지 해당 패키지 명 입력 -->
 	<context:component-scan base-package="myspring.di.annot"/>
 	
+	<!-- values.properties 파일 정보 설정 -->
+	<context:property-placeholder location="classpath:values.properties"/>
+	
 </beans>
