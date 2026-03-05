@@ -3,13 +3,11 @@ package mylaborder.di.xml;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 /**
  * DI(Dependency Injection)이 올바르게 작동하는지 확인하는 SpringTest
  */
 // XML 파일이 src/main/resources 폴더 바로 아래에 있으므로 classpath: 뒤에 파일명만 작성
-@SpringJUnitConfig(locations = "classpath:mylab-order-di.xml")
 public class OrderSpringTest {
 
     // ShoppingCart 클래스와 OrderService 클래스를 Injection 

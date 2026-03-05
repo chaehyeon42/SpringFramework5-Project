@@ -1,7 +1,10 @@
 package myspring.di.xml;
 
-//해당 메세지를 console에 뿌려줌
 public class ConsolePrinter implements Printer {
+	public ConsolePrinter() {
+		System.out.println(this.getClass().getName() + " 기본생성자 호출됨!");
+	}
+	
 	public void print(String message) {
 		System.out.println(message);
 	}
